@@ -8,8 +8,9 @@
   },
   "author": "Onaxsys",
   "license": "ISC",
-  "dependencies":{
-    "express":"*",
-    "body-parser": "*"
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "express-validator": "^5.2.0"
   }
 }
