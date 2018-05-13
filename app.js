@@ -26,7 +26,7 @@ app.get('/',(req, res)=>{
     res.send('Hello! valid request');
 });
 app.get('/about',(req, res)=>{
-    res.send('Hello! about request');
+    res.render('about');
 });
 app.listen(port,function(){
     console.log('server started on port: '+port);
