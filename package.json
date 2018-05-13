@@ -9,6 +9,9 @@
   },
   "author": "Onaxsys",
   "license": "ISC",
+  "engines":{
+    "node":"6.11.0"
+  },
   "dependencies": {
     "body-parser": "*",
     "express": "*",
