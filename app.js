@@ -23,10 +23,30 @@ app.use(bodyParser.urlencoded({extended:false}));
 //Set Static path
 app.use(express.static(path.join(__dirname,'public')));
 
+var people = [
+    {
+        name:'Onadebi',
+        address:'Zion',
+        designation:'Great'
+    },
+    {
+        name:'Umenu',
+        address:'Heaven',
+        designation:'Awesome'
+    }
+];
+
+
+//This is how Web Apis are written for consupmtion to client side application
+app.get('/js',(req, res)=>{
+    res.json(people);
+});
 
 app.get('/',(req, res)=>{
     res.render('index');
 });
+
+
 app.get('/about',(req, res)=>{
     res.render('about');
 });
