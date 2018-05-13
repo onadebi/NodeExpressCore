@@ -3,6 +3,10 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
+
 // var logger = (req, res, next)=>{
 //     console.log('...Logging');
 //     next();
@@ -24,6 +28,6 @@ app.get('/',(req, res)=>{
 app.get('/about',(req, res)=>{
     res.send('Hello! about request');
 });
-app.listen(4200,function(){
-    console.log('server started on port 4200');
+app.listen(port,function(){
+    console.log('server started on port: '+port);
 });
