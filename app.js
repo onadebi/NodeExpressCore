@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 app.get('/',(req, res)=>{
-    res.send('Hello! valid request');
+    res.render('index');
 });
 app.get('/about',(req, res)=>{
     res.render('about');
