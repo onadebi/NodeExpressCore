@@ -7,6 +7,16 @@ html, body{
     width:100%;
 }
 
+.ona-carousel-textCaption{
+    background-color:rgba(0,0,0,0.6); color:#fff; font-weight: bold; 
+    font-size:72px !important;
+}
+
+.ona-carousel-text{
+    background-color:rgba(0,0,0,0.4); color:#fff; font-weight: bold; 
+    font-size:22px !important;
+}
+
 ul .ulHorizontal {list-style-type: none;}
 .ulHorizontal li{display:inline; margin:0px 8px; text-transform: uppercase; text-decoration: none;}
 .ulHorizontal li a{ text-decoration: none;}
