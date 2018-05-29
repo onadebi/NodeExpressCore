@@ -8,6 +8,8 @@ var port = process.env.PORT || 3000;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
+
 
 // var logger = (req, res, next)=>{
 //     console.log('...Logging');
@@ -25,11 +27,13 @@ app.use(express.static(path.join(__dirname,'public')));
 
 var people = [
     {
+        Id:1,
         name:'Onadebi',
         address:'Zion',
         designation:'Great'
     },
     {
+        Id:2,
         name:'Umenu',
         address:'Heaven',
         designation:'Awesome'
@@ -43,13 +47,34 @@ app.get('/js',(req, res)=>{
 });
 
 app.get('/',(req, res)=>{
-    res.render('index');
+    var Title= 'Merry Thrills | Confectinary and Homely snacks';
+    res.render('index',
+        {
+            title:Title,
+            people:people
+        });
 });
 
 
 app.get('/about',(req, res)=>{
-    res.render('about');
+    res.render('about',{
+        title:'About us'
+    });
 });
+
+app.get('/contact',(req, res)=>{
+    res.render('contact',{
+        title:'Contact us'
+    });
+});
+///users/add
+app.post('/users/add',(req, res)=>{
+    var name = req.body.name;
+    console.log(name);
+    console.log('...REDIRECTING');
+    res.redirect('/about');
+});
+
 app.listen(port,function(){
     console.log('server started on port: '+port);
 });
