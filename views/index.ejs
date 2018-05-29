@@ -1,11 +1,25 @@
 <% include templates/header %>
-    NodeJs with EJS
-    <br/>
-    <div style="1px solid green">
-        <ul>
-        <% people.forEach((people)=>{ %>
-            <li><%=people.Id %> | <%=people.name %></li>
-        <% }) %>
-    </ul>
+
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+  <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 ona-carousel" src="media/images/slide-main.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 ona-carousel" src="media/images/slide-main.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 ona-carousel" src="media/images/slide-main.jpg" alt="Third slide">
+            </div>
+        </div>
     </div>
+    
 <% include templates/footer %>

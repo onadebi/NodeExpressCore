@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -50,15 +50,15 @@ app.get('/',(req, res)=>{
     var Title= 'Merry Thrills | Confectinary and Homely snacks';
     res.render('index',
         {
-            title:Title,
-            people:people
+            title:Title
         });
 });
 
 
 app.get('/about',(req, res)=>{
     res.render('about',{
-        title:'About us'
+        title:'About us',
+        people:people
     });
 });
 

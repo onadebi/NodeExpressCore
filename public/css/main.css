@@ -2,6 +2,10 @@ html, body{
     height:100%;
 }
 
+.ona-carousel{
+    max-height:400px;
+    width:100%;
+}
 
 ul .ulHorizontal {list-style-type: none;}
 .ulHorizontal li{display:inline; margin:0px 8px; text-transform: uppercase; text-decoration: none;}
