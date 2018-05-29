@@ -2,9 +2,7 @@ html, body{
     height:100%;
 }
 
-body{
-    background-color: green;
-}
+
 ul .ulHorizontal {list-style-type: none;}
 .ulHorizontal li{display:inline; margin:0px 8px; text-transform: uppercase; text-decoration: none;}
 .ulHorizontal li a{ text-decoration: none;}
