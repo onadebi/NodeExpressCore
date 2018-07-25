@@ -8,9 +8,10 @@ var port = process.env.PORT || 7200;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
+//Specify the folder we want to use for our views
 app.set('views', path.join(__dirname,'views'));
 
-
+///CUSTOM MIDDLEWARE
 // var logger = (req, res, next)=>{
 //     console.log('...Logging');
 //     next();
@@ -69,8 +70,12 @@ app.get('/contact',(req, res)=>{
 });
 ///users/add
 app.post('/users/add',(req, res)=>{
-    var name = req.body.name;
-    console.log(name);
+    var user  = {
+        first_name: req.body.name,
+        last_name= req.body.last_name,
+        email = req.body.email
+    };
+    console.log(user.first_name+' '+user.last_name+' '+user.email);
     console.log('...REDIRECTING');
     res.redirect('/about');
 });
