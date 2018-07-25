@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var expressValidator = require('express-validator');
 
 var app = express();
 // process.env.PORT lets the port be set by Heroku
@@ -25,6 +26,23 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 //Set Static path
 app.use(express.static(path.join(__dirname,'public')));
+//Express Validator Middleware
+app.use(expressValidator({
+    errorFormatter:(param,msg,value)=>{
+        var namespace = param.split('.'),
+        root = namespace.shift(),
+        formParam = root;
+
+        while(namespace.length){
+            formParam += '['+ namespace.shift()+']';
+        }
+        return{
+            param:formParam,
+            msg:msg,
+            value:value
+        };
+    }
+}));
 
 var people = [
     {
@@ -72,10 +90,10 @@ app.get('/contact',(req, res)=>{
 app.post('/users/add',(req, res)=>{
     var user  = {
         first_name: req.body.name,
-        last_name= req.body.last_name,
-        email = req.body.email
+        last_name: req.body.last_name,
+        email : req.body.email
     };
-    console.log(user.first_name+' '+user.last_name+' '+user.email);
+    console.log(user);
     console.log('...REDIRECTING');
     res.redirect('/about');
 });
