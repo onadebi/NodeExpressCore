@@ -13,12 +13,13 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
 ///CUSTOM MIDDLEWARE
-// var logger = (req, res, next)=>{
-//     console.log('...Logging');
-//     next();
-// }
+var dateTime = new Date(); 
+ var logger = (req, res, next)=>{
+     console.log(`Logging... -- ${dateTime}`);
+     next();
+ }
 
-// app.use(logger);
+ app.use(logger);
 
 //Body Parser MiddleWare
 app.use(bodyParser.json());
