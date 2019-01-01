@@ -18,9 +18,16 @@
     "ejs": "^2.6.1",
     "express": "*",
     "express-validator": "^5.2.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+      "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "connect-flash": "^0.1.1",
+    "bcryptjs": "^2.4.3"
   },
   "dev-dependencies":{
-    
+    "nodemon": "*"
   }
 }
