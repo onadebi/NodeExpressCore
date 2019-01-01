@@ -24,6 +24,11 @@ var dateTime = new Date();
 //Body Parser MiddleWare
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+//SETTING GLobal Variables e.g errors for global validation
+app.use((req,res,next)=>{
+    res.locals.errors = null;
+    next();
+})
 
 //Set Static path
 app.use(express.static(path.join(__dirname,'public')));
